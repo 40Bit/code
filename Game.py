@@ -46,7 +46,7 @@ def query_yes_no(question, default="yes"):
                              "(or 'y' or 'n').\n")
 
 
-def addspeed("speed", type, add_speed):
+def addspeed(type, add_speed):
     global state
     
     state[type] = state[type] + add_speed
@@ -63,7 +63,7 @@ def grasslandfile1():
 
     if answer11:
         print("equipped grass-knitted pants.received 0.5 more speed")
-        addspeed("speed", "speed", "speed", 0.5)
+        addspeed("speed", 0.5)
         eaglemountains()
 
     else:
@@ -90,8 +90,24 @@ def eaglemountains():
 
         else:   
             print("this is what you have in inventory")
-            print(state["inventory"])    
+            print(state["inventory"])
+            answer9 = query_yes_no("harvest grass from valley??")
 
+            if answer9:
+                print("you_________enemy")
+                answer9 = query_yes_no("kill enemy??")
+                
+                if answer9:
+                    print("you______//__<- enemy")
+                    print("harvested 10 grass pieces")
+                    state["inventory"]["grass"] += 10
+
+                else:
+                    print("you run up to the the higher cliffs")
+                    print("_")
+                    print(" _")
+                    print("  _")
+                    print("   ______'you___'enemy")
 
 
 def n_y_hit_dummy(question):
@@ -234,7 +250,19 @@ def n_y_hit_dummy(question):
                         
             
 def start():
-                
+    
+    print("a")
+    print("game")
+    print("by")
+    print("40Bit")
+
+    
+    print("——————")
+    print("QUESTX")
+    print("——————")
+
+    print("—") * 3500
+    
     answer = query_yes_no("melee??")
     if answer:
         print("melee » |")
@@ -264,7 +292,3 @@ def start():
 
 start()
 
-
-#while True:
-#    ask_question()
-#    show_state()
