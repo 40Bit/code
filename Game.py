@@ -233,32 +233,38 @@ def n_y_hit_dummy(question):
                     print("you go away from the hammer")
                         
             
+def start():
+                
+    answer = query_yes_no("melee??")
+    if answer:
+        print("melee » |")
+        answer3 = query_yes_no("go to spike cove?? ")
+        if answer3:
+            print("loading spike cove")
+            print("you->_sc_dummy")
+        else:
+            print("loading sunlight meadows")
+            print("you->_sm_dummy")
 
-# main body
+        n_y_hit_dummy("hit dummy?")
             
-answer = query_yes_no("melee??")
-if answer:
-    print("melee » |")
-    answer3 = query_yes_no("go to spike cove?? ")
-    if answer3:
-        print("loading spike cove")
-        print("you->_sc_dummy")
     else:
-        print("loading sunlight meadows")
-        print("you->_sm_dummy")
+        print("ranged ˘ |")
+        answer2 = query_yes_no("go to dark caverns?? ")
+        if answer2:
+            print("loading dark caverns")
+            print("you___________dc_dummy")
+        else:
+            print("loading sunshine rocks")
+            print("you___________sr_dummy")
 
-    n_y_hit_dummy("hit dummy?")
-        
-else:
-    print("ranged ˘ |")
-    answer2 = query_yes_no("go to dark caverns?? ")
-    if answer2:
-        print("loading dark caverns")
-        print("you___________dc_dummy")
-    else:
-        print("loading sunshine rocks")
-        print("you___________sr_dummy")
-
-    n_y_hit_dummy("shoot dummy?? ")          
-        
+        n_y_hit_dummy("shoot dummy?? ")          
             
+
+
+start()
+
+
+#while True:
+#    ask_question()
+#    show_state()
