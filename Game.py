@@ -46,18 +46,11 @@ def query_yes_no(question, default="yes"):
                              "(or 'y' or 'n').\n")
 
 
-def addspeed(add_speed):
+def addspeed("speed", type, add_speed):
     global state
     
-    state["speed"] = state["speed"] + add_speed
-    print("have %s speed" % state["speed"])
-
-
-def addxspeed(add_xspeed):
-    global state
-    
-    state["xspeed"] = state["xspeed"] + add_xspeed
-    print("have %s xspeed" % state["xspeed"])
+    state[type] = state[type] + add_speed
+    print("have %s %s" % (type, state[type]))
 
 
 
@@ -70,7 +63,7 @@ def grasslandfile1():
 
     if answer11:
         print("equipped grass-knitted pants.received 0.5 more speed")
-        addspeed(0.5)
+        addspeed("speed", "speed", "speed", 0.5)
         eaglemountains()
 
     else:
@@ -116,7 +109,7 @@ def n_y_hit_dummy(question):
 
             if answer9:
                 print("earned 3 speed levels")
-                addspeed(3)
+                addspeed("speed", 3)
                 print("loading grassland")
                 print("grassland loaded")
                 answer7 = query_yes_no("harvest some grass?? ")
@@ -187,7 +180,7 @@ def n_y_hit_dummy(question):
 
             if answer10:
                 print("put on fabric pants.received 0.5 more speed")
-                addspeed(0.5)
+                addspeed("speed", 0.5)
                 print("loading grassland")
                 print("grassland loaded")
                 grasslandfile1()
@@ -234,7 +227,7 @@ def n_y_hit_dummy(question):
                 if answer15:
                     print("you_-||_<- hammer")
                     print("you pick up the hammer.it is a x-speed hammer.you gain 1.3 x-speed.")
-                    addxspeed(1.3)
+                    addspeed("xspeed", 1.3)
                     
                 else:
                     print("you go away from the hammer")
