@@ -192,7 +192,7 @@ def n_y_hit_dummy(question):
 
         if answer6:
             print("collected 6 fabric")
-            answer10 = query_yes_no("craft fabric pants")
+            answer10 = query_yes_no("craft fabric pants??")
 
             if answer10:
                 print("put on fabric pants.received 0.5 more speed")
@@ -260,8 +260,6 @@ def start():
     print("——————")
     print("QUESTX")
     print("——————")
-
-    print("—") * 3500
     
     answer = query_yes_no("melee??")
     if answer:
