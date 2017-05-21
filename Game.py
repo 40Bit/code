@@ -1,12 +1,16 @@
 import sys
 
 state = {
-    "speed": 0,
-    "xspeed": 0,
+    "speeds": {
+        "speed": 0,
+        "xspeed": 0,
+    },
     "inventory": {
         "fabric": 0,
         "grass": 0,
         "rocks": 0,
+        "x-speed hammmer": 0,
+        "spiked boomerang": 0,
         },
     }
 
@@ -49,8 +53,8 @@ def query_yes_no(question, default="yes"):
 def addspeed(type, add_speed):
     global state
     
-    state[type] = state[type] + add_speed
-    print("have %s %s" % (type, state[type]))
+    state["speeds"][type] += add_speed
+    print("have %s %s" % (type, state["speeds"][type]))
 
 
 
@@ -108,6 +112,10 @@ def eaglemountains():
                     print(" _")
                     print("  _")
                     print("   ______'you___'enemy")
+                    answer9 = query_yes_no("you see a spiked boomerang.do you take it??")
+
+                    if answer9:
+                        state["inventory"]["spiked boomerang"] += 1
 
 
 def n_y_hit_dummy(question):
@@ -126,6 +134,7 @@ def n_y_hit_dummy(question):
             if answer9:
                 print("earned 3 speed levels")
                 addspeed("speed", 3)
+                
                 print("loading grassland")
                 print("grassland loaded")
                 answer7 = query_yes_no("harvest some grass?? ")
@@ -244,6 +253,7 @@ def n_y_hit_dummy(question):
                     print("you_-||_<- hammer")
                     print("you pick up the hammer.it is a x-speed hammer.you gain 1.3 x-speed.")
                     addspeed("xspeed", 1.3)
+                    state['inventory']["x-speed"] += 1
                     
                 else:
                     print("you go away from the hammer")
@@ -254,7 +264,7 @@ def start():
     print("a")
     print("game")
     print("by")
-    print("40Bit")
+    print("[40Bit]")
 
     
     print("——————")
