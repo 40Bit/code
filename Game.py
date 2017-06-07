@@ -1,7 +1,7 @@
 import sys
 
 state = {
-    "hearts": 5,
+    "hearts": 9,
     "speeds": {
         "speed": 0,
         "xspeed": 0,
@@ -71,6 +71,9 @@ def grasslandfile1():
     if answer11:
         print("equipped grass-knitted pants.received 0.5 more speed")
         addspeed("speed", 0.5)
+        ("this is your health:")
+        print("state[hearts]")
+        
         eaglemountains()
 
     else:
@@ -101,26 +104,42 @@ def eaglemountains():
                 else:
                     print("you try to back away from the crystal but you can't.you go look at the shiny thing.it is some crystals.")
                           
-                answer9 = query_yes_no("do you take the crystal??")
+                answer9 = query_yes_no("do you take the crystals??")
 
                 if answer9:
                           state["inventory"]["crystal"] += 2
                           print("this is your inventory:")
                           print(state["inventory"])
-                          print("you then fall into a hole somehow.then you realize that the crystal was a trap.you were not supposed to take the crystal.you also got hurt from the fall")
+                          print("you then fall into a hole somehow.then you realize that the crystal was a trap.you were supposed to take the crystal and then fall in the hole is how the person who made this trap designed.you also got hurt from the fall")
                           print("depleted 1 heart")
                           state["hearts"] -= 1
                           print("this is your health:")
                           print(state["hearts"])
 
                 else:
-                    print("h)ello")
-                
-                          
+                    print("you went away from the crystals.for some reason the barrier went away (the thing that was blocking you) making it possible to go away from the crystals")
+                    print("you_________enemy_")
+                    answer9 = query_yes_no("do you kill the enemy??")
 
+                    if answer9:                                                                                                                                                         
+                        print("you_________enemy")
+                        print("the enemy is still alive")
+                        answer9 = query_yes_no("do you hit the enemy again??")
+
+                        if answer9:
+                            print("you______//_<-_enemy")
+
+                    else:
+                        print("the enemy hits you once.depleted 1.5 hearts")
+                        state[hearts] -= 1.5
+                        print("this is your health:")      
+                        print(state["hearts"])
         else:
             print("this is what you have in inventory")
             print(state["inventory"])
+            print("this is your health:")
+            print(state["hearts"])
+            
             answer9 = query_yes_no("harvest grass from valley??")
 
             if answer9:
