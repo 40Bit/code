@@ -63,12 +63,11 @@ def addspeed(type, add_speed):
 def printstate(type):
     global state
 
-    if (type == "inventory"):
-        print("inventory: ")
-        
     if (type == "hearts"):
         print("this is your health:")
-        
+    else:
+        print("this is your " + type + ": ")
+
     print(state[type])
 
 
