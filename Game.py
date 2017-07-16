@@ -171,12 +171,15 @@ def eaglemountains():
 
                         if answer9:
                             print("you___//_<-_enemy")
+                            print(state["hearts"])
+                            print(state["inventory"])
 
                         else:
                             print("enemy depleted 0.5 hearts")
                             state["hearts"] -= 0.5
                             print("hearts:")
                             print(state["hearts"])
+                            print(state["inventory"]) 
                             
 
                             
