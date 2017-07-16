@@ -60,6 +60,16 @@ def addspeed(type, add_speed):
     print("have %s %s" % (type, state["speeds"][type]))
 
 
+def printstate(type):
+    global state
+
+    if (type == "inventory"):
+        print("inventory: ")
+        
+    if (type == "hearts"):
+        print("this is your health:")
+        
+    print(state[type])
 
 
 def grasslandfile1():
@@ -71,15 +81,13 @@ def grasslandfile1():
     if answer11:
         print("equipped grass-knitted pants.received 0.5 more speed")
         addspeed("speed", 0.5)
-        ("this is your health:")
-        print("state[hearts]")
+        printstate("hearts")
         
         eaglemountains()
 
     else:
         state["inventory"]["grass"] += 25
-        print("inventory:")
-        print(state["inventory"])
+        printstate("inventory")
         eaglemountains()
 
 
@@ -95,7 +103,7 @@ def eaglemountains():
                 print("took 3 rocks")
                 state["inventory"]["rocks"] += 3
                 print("this is what you have in inventory")
-                print(state["inventory"])
+                printstate("inventory")
                 answer9 = query_yes_no("you see something shiny.do you take a closer look??")
                 
                 if answer9:
@@ -109,12 +117,11 @@ def eaglemountains():
                 if answer9:
                           state["inventory"]["crystal"] += 2
                           print("this is your inventory:")
-                          print(state["inventory"])
+                          printstate("inventory")
                           print("you then fall into a hole somehow.then you realize that the crystal was a trap.you were supposed to take the crystal and then fall in the hole is how the person who made this trap designed.you also got hurt from the fall")
                           print("depleted 1 heart")
                           state["hearts"] -= 1
-                          print("this is your health:")
-                          print(state["hearts"])
+                          printstate("hearts")
 
                 else:
                     print("you went away from the crystals.for some reason the barrier went away (the thing that was blocking you) making it possible to go away from the crystals")
@@ -132,13 +139,11 @@ def eaglemountains():
                     else:
                         print("the enemy hits you once.depleted 1.5 hearts")
                         state[hearts] -= 1.5
-                        print("this is your health:")      
-                        print(state["hearts"])
+                        printstate("hearts")
         else:
             print("this is what you have in inventory")
-            print(state["inventory"])
-            print("this is your health:")
-            print(state["hearts"])
+            printstate("inventory")
+            printstate("hearts")
             
             answer9 = query_yes_no("harvest grass from valley??")
 
@@ -151,7 +156,7 @@ def eaglemountains():
                     print("harvested 10 grass pieces")
                     state["inventory"]["grass"] += 10
                     print("your inventory:")
-                    print(state["inventory"])
+                    printstate("inventory")
 
                 else:
                     print("you run up to the the higher cliffs")
@@ -171,16 +176,15 @@ def eaglemountains():
 
                         if answer9:
                             print("you___//_<-_enemy")
-                            print(state["hearts"])
-                            print(state["inventory"])
+                            printstate("hearts")
+                            printstate("inventory")
 
                         else:
                             print("enemy depleted 0.5 hearts")
                             state["hearts"] -= 0.5
-                            print("hearts:")
-                            print(state["hearts"])
-                            print(state["inventory"]) 
                             
+                            printstate("hearts")
+                            printstate("inventory") 
 
                             
 def n_y_hit_dummy(question):
@@ -277,8 +281,7 @@ def n_y_hit_dummy(question):
 
             else:
                 state["inventory"]["fabric"] += 6
-                print("inventory:")
-                print(state["inventory"])
+                printstate("inventory")
                 print("loading grassland")
                 print("grassland loaded")
                 answer12 = query_yes_no("harvest some grass?? ")
