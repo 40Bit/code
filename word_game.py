@@ -13,7 +13,7 @@ fails = 0
 # print (a)
 # print (p)
 
-while fails < 9:
+while fails < 5:
 
     answer5 = input("guess a letter(or a word!)")
 
