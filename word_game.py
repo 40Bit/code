@@ -31,6 +31,7 @@ while fails < 5:
 
         else:
             fails += 1
+
                 
     print(z)
     print(a)
@@ -38,3 +39,8 @@ while fails < 5:
 
     print("fails:")
     print(fails)
+
+while fails > 5:
+    print("y_o|u__l|o_s|e_")
+    print("y|o_u|_l_o|s_e|")
+    
