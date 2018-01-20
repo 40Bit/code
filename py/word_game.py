@@ -1,7 +1,7 @@
 
-z = "_"
-a = "_"
-p = "_"
+one = "_"
+two = "_"
+three = "_"
 
 fails = 0
 
@@ -20,22 +20,22 @@ while fails < 5:
     for x in answer5:
         
         if x == "z":
-            z = "z"
+            one = "z"
 
         elif x == "a":
-            a = "a"
+            two = "a"
 
         elif x == "p":
-            p = "p"
+            three = "p"
         
 
         else:
             fails += 1
 
                 
-    print(z)
-    print(a)
-    print(p)
+    print(one)
+    print(two)
+    print(three)
 
     print("fails:")
     print(fails)
