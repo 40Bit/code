@@ -1,0 +1,7 @@
+console.log('JS')
+console.log('HELLO'.toLowerCase())
+console.log( Boolean(undefined))
+console.log(Boolean(0))
+console.log(Boolean(3))
+console.log(Boolean({}))
+console.log(Boolean(false))
