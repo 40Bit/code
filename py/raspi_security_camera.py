@@ -1,21 +1,19 @@
 import time
+from picamera import PiCamera
 
-def picture():
-    capture()
+camera = PiCamera()
 
-def start_video():
-    start_recording()
+def pic():
+    camera.capture('/var/www/html/photos/pic.jpg')
 
-def end_video():
-    stop_recording()
-
-def pic_rep_on():
+def start_vid():
+    camera.start_recording('/var/www/html/photos/vid.h264')
+    
+def end_vid():
+    camera.stop_recording
+    
+def pic_rep():
     print('control+c to turn off')
     while True:
         time.sleep(3)
-        capture()
-        
-
-    
-
-    
+        camera.capture('/var/www/html/photos/pic_rep.jpg')
