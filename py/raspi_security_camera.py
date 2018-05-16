@@ -1,4 +1,4 @@
-# you'll need a raspberry pi and a camera module to use this code! 
+# you'll need a raspberry pi with a camera module to use this code! 
 
 import time
 from picamera import PiCamera
