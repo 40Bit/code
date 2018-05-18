@@ -26,3 +26,15 @@ def auto_vid(a):
     camera.start_recording('/var/www/html/photos/auto_vid.h264')
     time.sleep(a)
     camera.stop_recording()
+
+def pic_smi():
+    print('3')
+    time.sleep(1)
+    print('2')
+    time.sleep(1)
+    print('1')
+    time.sleep(1)
+    print('smile!!')
+    camera.capture('/var/www/html/photos/pic_smi.jpg')
+    
+    
