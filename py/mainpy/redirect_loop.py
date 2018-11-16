@@ -3,5 +3,5 @@ for i in range(0, len(a)):
 	c = a[i]
 	d = a[i+1]
 	l = open(c+".html", "w")
-	l.write('<head><meta'+'d'+'.html'+'></head>')
+	l.write('<head><meta' + d +'.html'+'></head>')
 	l.close()
