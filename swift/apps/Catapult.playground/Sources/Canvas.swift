@@ -36,8 +36,6 @@ public class Canvas {
     /// - localizationKey: Canvas.visibleSize
     public var visibleSize: Size {
         get {
-            print(backingView.frame.width)
-            print(backingView.frame.height)
             let modelWidth = convertMagnitudeFromScreen(screenMagnitude: Double(backingView.frame.width))
             let modelHeight = convertMagnitudeFromScreen(screenMagnitude: Double(backingView.frame.height))
             return Size(width: modelWidth, height: modelHeight)
