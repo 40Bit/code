@@ -10,6 +10,10 @@ class ViewController: UIViewController {
         // changing background color
         Canvas.shared.color = .white
         
+        // if device = phone, send message
+        // make sprites bigger / smaller? proj?
+        // move sprites? proj?
+        
         // tries
         var tries = 0
         // checks if projectile is running
@@ -184,10 +188,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view = Canvas.shared.backingView
-        self.preferredContentSize = CGSize(width: 800, height: 700)
+        self.preferredContentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        Canvas.shared.numPointsPerUnit = Double(UIScreen.main.bounds.height * 0.014)
         main()
     }
-
 
 }
 

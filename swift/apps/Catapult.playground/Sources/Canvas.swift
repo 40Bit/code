@@ -58,7 +58,7 @@ public class Canvas {
         }
     }
     
-    internal let numPointsPerUnit = 10.0
+    public var numPointsPerUnit = 10.0
     
     fileprivate var offsetToCenterOfViewInScreenPoints = Point(x: 0, y: 0)
     
