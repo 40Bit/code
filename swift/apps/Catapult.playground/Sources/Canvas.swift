@@ -90,7 +90,7 @@ public class Canvas {
     
     internal func addDrawable(drawable: AbstractDrawable) {
         // if the drawable is already on the canvas, just return.
-        guard drawables.index(of: drawable) == nil else { return }
+        guard drawables.firstIndex(of: drawable) == nil else { return }
         drawables.append(drawable)
         backingView.addSubview(drawable.backingView)
         centerDrawable(drawable: drawable)
@@ -98,7 +98,7 @@ public class Canvas {
     
     internal func removeDrawable(drawable: AbstractDrawable) {
         // if the drawable isn't on the canvas, just return.
-        guard let index = drawables.index(of: drawable) else { return }
+        guard let index = drawables.firstIndex(of: drawable) else { return }
         drawable.backingView.removeFromSuperview()
         drawables.remove(at: index)
     }

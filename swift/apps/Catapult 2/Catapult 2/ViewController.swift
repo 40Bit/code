@@ -116,7 +116,7 @@ class ViewController: UIViewController {
                             tries += 1
                             triesText.string = "Tries: " + String(tries)
                             
-                            let timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { timer in
+                            Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { timer in
                                 animate(duration: 3) {
                                     proj.radius = 0
                                 }
@@ -134,7 +134,7 @@ class ViewController: UIViewController {
                     score += 10
                     
                     // add score to the text
-                    let timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { timer in
+                    Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { timer in
                         animate(duration: 1.5) {
                             scoreText.string = "Score: " + String(score)
                             
