@@ -7,55 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0768CFA3224F114F00B215D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768CFA2224F114F00B215D3 /* AppDelegate.swift */; };
-		0768CFA5224F114F00B215D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768CFA4224F114F00B215D3 /* ViewController.swift */; };
-		0768CFA8224F114F00B215D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0768CFA6224F114F00B215D3 /* Main.storyboard */; };
+		0731067D226262290047CB63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731067C226262290047CB63 /* ViewController.swift */; };
+		0731067F226262380047CB63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731067E226262380047CB63 /* AppDelegate.swift */; };
+		075696152262601600E4F1C0 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075696062262601400E4F1C0 /* Canvas.swift */; };
+		075696162262601600E4F1C0 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075696082262601400E4F1C0 /* Text.swift */; };
+		075696172262601600E4F1C0 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075696032262601400E4F1C0 /* Point.swift */; };
+		075696182262601600E4F1C0 /* TouchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0756960A2262601400E4F1C0 /* TouchGestureRecognizer.swift */; };
+		075696192262601600E4F1C0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0756960D2262601400E4F1C0 /* Color.swift */; };
+		0756961A2262601600E4F1C0 /* AbstractDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075696122262601500E4F1C0 /* AbstractDrawable.swift */; };
+		0756961B2262601600E4F1C0 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075696052262601400E4F1C0 /* Circle.swift */; };
+		0756961C2262601600E4F1C0 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075696112262601500E4F1C0 /* Rectangle.swift */; };
+		0756961D2262601600E4F1C0 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075696042262601400E4F1C0 /* Shadow.swift */; };
+		0756961E2262601600E4F1C0 /* AbstractShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0756960B2262601400E4F1C0 /* AbstractShape.swift */; };
+		0756961F2262601600E4F1C0 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075696102262601500E4F1C0 /* Grid.swift */; };
+		075696202262601600E4F1C0 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0756960E2262601500E4F1C0 /* Line.swift */; };
+		075696212262601600E4F1C0 /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075696142262601600E4F1C0 /* Setup.swift */; };
+		075696222262601600E4F1C0 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0756960F2262601500E4F1C0 /* Image.swift */; };
+		075696242262601600E4F1C0 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075696132262601500E4F1C0 /* Size.swift */; };
 		0768CFAA224F115100B215D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0768CFA9224F115100B215D3 /* Assets.xcassets */; };
 		0768CFAD224F115100B215D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0768CFAB224F115100B215D3 /* LaunchScreen.storyboard */; };
-		0768CFC3224F121B00B215D3 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768CFB4224F121A00B215D3 /* Grid.swift */; };
-		0768CFC4224F121B00B215D3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768CFB5224F121A00B215D3 /* Color.swift */; };
-		0768CFC5224F121B00B215D3 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768CFB6224F121A00B215D3 /* Circle.swift */; };
-		0768CFC6224F121B00B215D3 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768CFB7224F121A00B215D3 /* Rectangle.swift */; };
-		0768CFC7224F121B00B215D3 /* AbstractDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768CFB8224F121A00B215D3 /* AbstractDrawable.swift */; };
-		0768CFC8224F121B00B215D3 /* TouchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768CFB9224F121A00B215D3 /* TouchGestureRecognizer.swift */; };
-		0768CFC9224F121B00B215D3 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768CFBA224F121A00B215D3 /* Line.swift */; };
-		0768CFCA224F121B00B215D3 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768CFBB224F121A00B215D3 /* Image.swift */; };
-		0768CFCB224F121B00B215D3 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768CFBC224F121B00B215D3 /* Shadow.swift */; };
-		0768CFCC224F121B00B215D3 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768CFBD224F121B00B215D3 /* Canvas.swift */; };
-		0768CFCD224F121B00B215D3 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768CFBE224F121B00B215D3 /* Point.swift */; };
-		0768CFCE224F121B00B215D3 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768CFBF224F121B00B215D3 /* Size.swift */; };
-		0768CFCF224F121B00B215D3 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768CFC0224F121B00B215D3 /* Text.swift */; };
-		0768CFD0224F121B00B215D3 /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768CFC1224F121B00B215D3 /* Setup.swift */; };
-		0768CFD1224F121B00B215D3 /* AbstractShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768CFC2224F121B00B215D3 /* AbstractShape.swift */; };
 		0768CFD4224F122600B215D3 /* Basket Head 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0768CFD2224F122600B215D3 /* Basket Head 3.png */; };
 		0768CFD5224F122600B215D3 /* Catapult2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0768CFD3224F122600B215D3 /* Catapult2.png */; };
+		07AB31AC2262681D00795306 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07AB31AB2262681D00795306 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0731067C226262290047CB63 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0731067E226262380047CB63 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		075696032262601400E4F1C0 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		075696042262601400E4F1C0 /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
+		075696052262601400E4F1C0 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		075696062262601400E4F1C0 /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		075696082262601400E4F1C0 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		0756960A2262601400E4F1C0 /* TouchGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureRecognizer.swift; sourceTree = "<group>"; };
+		0756960B2262601400E4F1C0 /* AbstractShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractShape.swift; sourceTree = "<group>"; };
+		0756960D2262601400E4F1C0 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		0756960E2262601500E4F1C0 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		0756960F2262601500E4F1C0 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		075696102262601500E4F1C0 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		075696112262601500E4F1C0 /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
+		075696122262601500E4F1C0 /* AbstractDrawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractDrawable.swift; sourceTree = "<group>"; };
+		075696132262601500E4F1C0 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		075696142262601600E4F1C0 /* Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
 		0768CF9F224F114F00B215D3 /* Catapult 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Catapult 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0768CFA2224F114F00B215D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0768CFA4224F114F00B215D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0768CFA7224F114F00B215D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0768CFA9224F115100B215D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0768CFAC224F115100B215D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0768CFAE224F115100B215D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0768CFB4224F121A00B215D3 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Grid.swift; path = ../../Catapult.playground/Sources/Grid.swift; sourceTree = "<group>"; };
-		0768CFB5224F121A00B215D3 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = ../../Catapult.playground/Sources/Color.swift; sourceTree = "<group>"; };
-		0768CFB6224F121A00B215D3 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Circle.swift; path = ../../Catapult.playground/Sources/Circle.swift; sourceTree = "<group>"; };
-		0768CFB7224F121A00B215D3 /* Rectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rectangle.swift; path = ../../Catapult.playground/Sources/Rectangle.swift; sourceTree = "<group>"; };
-		0768CFB8224F121A00B215D3 /* AbstractDrawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbstractDrawable.swift; path = ../../Catapult.playground/Sources/AbstractDrawable.swift; sourceTree = "<group>"; };
-		0768CFB9224F121A00B215D3 /* TouchGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TouchGestureRecognizer.swift; path = ../../Catapult.playground/Sources/TouchGestureRecognizer.swift; sourceTree = "<group>"; };
-		0768CFBA224F121A00B215D3 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Line.swift; path = ../../Catapult.playground/Sources/Line.swift; sourceTree = "<group>"; };
-		0768CFBB224F121A00B215D3 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image.swift; path = ../../Catapult.playground/Sources/Image.swift; sourceTree = "<group>"; };
-		0768CFBC224F121B00B215D3 /* Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Shadow.swift; path = ../../Catapult.playground/Sources/Shadow.swift; sourceTree = "<group>"; };
-		0768CFBD224F121B00B215D3 /* Canvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Canvas.swift; path = ../../Catapult.playground/Sources/Canvas.swift; sourceTree = "<group>"; };
-		0768CFBE224F121B00B215D3 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Point.swift; path = ../../Catapult.playground/Sources/Point.swift; sourceTree = "<group>"; };
-		0768CFBF224F121B00B215D3 /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Size.swift; path = ../../Catapult.playground/Sources/Size.swift; sourceTree = "<group>"; };
-		0768CFC0224F121B00B215D3 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Text.swift; path = ../../Catapult.playground/Sources/Text.swift; sourceTree = "<group>"; };
-		0768CFC1224F121B00B215D3 /* Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Setup.swift; path = ../../Catapult.playground/Sources/Setup.swift; sourceTree = "<group>"; };
-		0768CFC2224F121B00B215D3 /* AbstractShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbstractShape.swift; path = ../../Catapult.playground/Sources/AbstractShape.swift; sourceTree = "<group>"; };
 		0768CFD2224F122600B215D3 /* Basket Head 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Basket Head 3.png"; path = "../../Catapult.playground/Resources/Basket Head 3.png"; sourceTree = "<group>"; };
 		0768CFD3224F122600B215D3 /* Catapult2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Catapult2.png; path = ../../Catapult.playground/Resources/Catapult2.png; sourceTree = "<group>"; };
+		07AB31AB2262681D00795306 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,24 +88,24 @@
 		0768CFA1224F114F00B215D3 /* Catapult 2 */ = {
 			isa = PBXGroup;
 			children = (
-				0768CFA2224F114F00B215D3 /* AppDelegate.swift */,
-				0768CFB8224F121A00B215D3 /* AbstractDrawable.swift */,
-				0768CFC2224F121B00B215D3 /* AbstractShape.swift */,
-				0768CFBD224F121B00B215D3 /* Canvas.swift */,
-				0768CFB6224F121A00B215D3 /* Circle.swift */,
-				0768CFB5224F121A00B215D3 /* Color.swift */,
-				0768CFB4224F121A00B215D3 /* Grid.swift */,
-				0768CFBB224F121A00B215D3 /* Image.swift */,
-				0768CFBA224F121A00B215D3 /* Line.swift */,
-				0768CFBE224F121B00B215D3 /* Point.swift */,
-				0768CFB7224F121A00B215D3 /* Rectangle.swift */,
-				0768CFC1224F121B00B215D3 /* Setup.swift */,
-				0768CFBC224F121B00B215D3 /* Shadow.swift */,
-				0768CFBF224F121B00B215D3 /* Size.swift */,
-				0768CFC0224F121B00B215D3 /* Text.swift */,
-				0768CFB9224F121A00B215D3 /* TouchGestureRecognizer.swift */,
-				0768CFA4224F114F00B215D3 /* ViewController.swift */,
-				0768CFA6224F114F00B215D3 /* Main.storyboard */,
+				075696122262601500E4F1C0 /* AbstractDrawable.swift */,
+				0756960B2262601400E4F1C0 /* AbstractShape.swift */,
+				075696062262601400E4F1C0 /* Canvas.swift */,
+				075696102262601500E4F1C0 /* Grid.swift */,
+				0756960F2262601500E4F1C0 /* Image.swift */,
+				075696052262601400E4F1C0 /* Circle.swift */,
+				0731067C226262290047CB63 /* ViewController.swift */,
+				0731067E226262380047CB63 /* AppDelegate.swift */,
+				0756960D2262601400E4F1C0 /* Color.swift */,
+				0756960E2262601500E4F1C0 /* Line.swift */,
+				07AB31AB2262681D00795306 /* Main.storyboard */,
+				075696112262601500E4F1C0 /* Rectangle.swift */,
+				075696142262601600E4F1C0 /* Setup.swift */,
+				075696132262601500E4F1C0 /* Size.swift */,
+				0756960A2262601400E4F1C0 /* TouchGestureRecognizer.swift */,
+				075696032262601400E4F1C0 /* Point.swift */,
+				075696042262601400E4F1C0 /* Shadow.swift */,
+				075696082262601400E4F1C0 /* Text.swift */,
 				0768CFD2224F122600B215D3 /* Basket Head 3.png */,
 				0768CFA9224F115100B215D3 /* Assets.xcassets */,
 				0768CFD3224F122600B215D3 /* Catapult2.png */,
@@ -174,9 +174,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0768CFD5224F122600B215D3 /* Catapult2.png in Resources */,
+				07AB31AC2262681D00795306 /* Main.storyboard in Resources */,
 				0768CFAD224F115100B215D3 /* LaunchScreen.storyboard in Resources */,
 				0768CFAA224F115100B215D3 /* Assets.xcassets in Resources */,
-				0768CFA8224F114F00B215D3 /* Main.storyboard in Resources */,
 				0768CFD4224F122600B215D3 /* Basket Head 3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,37 +188,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0768CFC5224F121B00B215D3 /* Circle.swift in Sources */,
-				0768CFCF224F121B00B215D3 /* Text.swift in Sources */,
-				0768CFC8224F121B00B215D3 /* TouchGestureRecognizer.swift in Sources */,
-				0768CFC7224F121B00B215D3 /* AbstractDrawable.swift in Sources */,
-				0768CFA5224F114F00B215D3 /* ViewController.swift in Sources */,
-				0768CFCD224F121B00B215D3 /* Point.swift in Sources */,
-				0768CFC4224F121B00B215D3 /* Color.swift in Sources */,
-				0768CFD1224F121B00B215D3 /* AbstractShape.swift in Sources */,
-				0768CFD0224F121B00B215D3 /* Setup.swift in Sources */,
-				0768CFC6224F121B00B215D3 /* Rectangle.swift in Sources */,
-				0768CFC9224F121B00B215D3 /* Line.swift in Sources */,
-				0768CFCE224F121B00B215D3 /* Size.swift in Sources */,
-				0768CFA3224F114F00B215D3 /* AppDelegate.swift in Sources */,
-				0768CFC3224F121B00B215D3 /* Grid.swift in Sources */,
-				0768CFCB224F121B00B215D3 /* Shadow.swift in Sources */,
-				0768CFCA224F121B00B215D3 /* Image.swift in Sources */,
-				0768CFCC224F121B00B215D3 /* Canvas.swift in Sources */,
+				075696222262601600E4F1C0 /* Image.swift in Sources */,
+				075696152262601600E4F1C0 /* Canvas.swift in Sources */,
+				0756961A2262601600E4F1C0 /* AbstractDrawable.swift in Sources */,
+				075696162262601600E4F1C0 /* Text.swift in Sources */,
+				075696202262601600E4F1C0 /* Line.swift in Sources */,
+				075696212262601600E4F1C0 /* Setup.swift in Sources */,
+				075696192262601600E4F1C0 /* Color.swift in Sources */,
+				0756961C2262601600E4F1C0 /* Rectangle.swift in Sources */,
+				075696242262601600E4F1C0 /* Size.swift in Sources */,
+				0756961B2262601600E4F1C0 /* Circle.swift in Sources */,
+				0731067D226262290047CB63 /* ViewController.swift in Sources */,
+				0756961F2262601600E4F1C0 /* Grid.swift in Sources */,
+				075696182262601600E4F1C0 /* TouchGestureRecognizer.swift in Sources */,
+				0756961E2262601600E4F1C0 /* AbstractShape.swift in Sources */,
+				0756961D2262601600E4F1C0 /* Shadow.swift in Sources */,
+				0731067F226262380047CB63 /* AppDelegate.swift in Sources */,
+				075696172262601600E4F1C0 /* Point.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0768CFA6224F114F00B215D3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0768CFA7224F114F00B215D3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0768CFAB224F115100B215D3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -361,7 +353,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.trimian.catapult;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -380,7 +372,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.trimian.catapult;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
