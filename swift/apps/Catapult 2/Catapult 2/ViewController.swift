@@ -133,7 +133,9 @@ class ViewController: UIViewController {
                 }
                 
                 // the target calculations
-                if target.center.y+3 >= proj.center.y && target.center.y-3 <= proj.center.y && target.center.x == proj.center.x {
+                if target.center.y+3 >= proj.center.y
+                    && target.center.y-3 <= proj.center.y
+                    && abs(target.center.x - proj.center.x) < 0.001 {
                     // projectile has hit the target
                     score += 10
                     
