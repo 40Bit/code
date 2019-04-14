@@ -13,39 +13,53 @@ struct localStorage {
     static let drillInfoKey = "drillInfo"
     static let currentGemTypeKey = "currentGemType"
     static let nextGemTypeKey = "nextGemType"
+    static let currentGemIndexKey = "currentGemIndex"
+    static let gemsPerClickKey = "gemsPerClick"
 }
 
-struct gemTypes {
-    static let topaz = ["name": "Topaz", "cost": "0", "image": "topaz.png"]
-    static let sapphire = ["name": "Sapphire", "cost": "1500", "image": "sapphire.png"]
-    static let emerald = ["name": "Emerald", "cost": "5000", "image": "emerald.png"]
-    static let ruby = ["name": "Ruby", "cost": "8000", "image": "ruby.png"]
-    static let aquamarine = ["name": "Aquamarine", "cost": "15000", "image": "aquamarine.png"]
-    static let diamond = ["name": "Diamond", "cost": "25500", "image": "diamond.png"]
-}
+let gemInfo = [
+    "topaz": ["name": "Topaz", "cost": "0", "image": "Topaz.png"],
+    "sapphire": ["name": "Sapphire", "cost": "1500", "image": "Sapphire.png"],
+    "emerald": ["name": "Emerald", "cost": "5000", "image": "Emerald.png"],
+    "ruby": ["name": "Ruby", "cost": "8000", "image": "Ruby.png"],
+    "aquamarine": ["name": "Aquamarine", "cost": "15000", "image": "Aquamarine.png"],
+    "diamond": ["name": "Diamond", "cost": "25500", "image": "Diamond.png"],
+]
 
 let defaults = UserDefaults.standard
 let drillInfoDefault = ["drill": 0, "autoDrill": 0, "titaniumDrill": 0, "fireDrill": 0]
-let currentGemTypeDefault = gemTypes.topaz
-let nextGemTypeDefault = gemTypes.sapphire
+let currentGemTypeDefault = "topaz"
+let nextGemTypeDefault = "sapphire"
+let currentGemIndexDefault = 0
+let gemOrder = ["topaz", "sapphire", "emerald", "ruby", "aquamarine", "diamond"]
 
+var gemsPerClick = 1
+var currentGemIndex = currentGemIndexDefault
 var drillInfo = drillInfoDefault
+var currentGemType = currentGemTypeDefault
+var nextGemType = nextGemTypeDefault
 var gems = 0
-var currentGemType = gemTypes.topaz
-var nextGemType = gemTypes.sapphire
-
 
 func startup() {
     gems = defaults.integer(forKey: localStorage.gemsKey)
     drillInfo = defaults.dictionary(forKey: localStorage.drillInfoKey) as? [String: Int] ?? drillInfoDefault
-    currentGemType = defaults.dictionary(forKey: localStorage.currentGemTypeKey) as? [String: String] ?? currentGemTypeDefault
-    nextGemType = defaults.dictionary(forKey: localStorage.nextGemTypeKey) as? [String: String] ?? nextGemTypeDefault
+    currentGemType = defaults.string(forKey: localStorage.currentGemTypeKey) ?? currentGemTypeDefault
+    nextGemType = defaults.string(forKey: localStorage.nextGemTypeKey) ?? nextGemTypeDefault
+    currentGemIndex = defaults.integer(forKey: localStorage.currentGemIndexKey)
+    gemsPerClick = defaults.integer(forKey: localStorage.gemsPerClickKey)
+    if gemsPerClick == 0 {
+        gemsPerClick = 1
+    }
 }
 
 func main() {
     
     func store() {
         Canvas.shared.clear()
+        
+        let valuesNotTrueText = Text(string: "Not Enough Gems!", fontSize: 70.0, fontName: "Copperplate", color: #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1))
+        valuesNotTrueText.center.y = 0
+        valuesNotTrueText.center.x -= 60
         
         let backText = Text(string: "Back", fontSize: 50.0, fontName: "Copperplate", color: #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1))
         backText.center.y = 38
@@ -55,10 +69,15 @@ func main() {
         buyGemText2.center.y = 30
         buyGemText2.center.x = 0
         
-        var buyGemText = Text(string: String(nextGemType["name"] ?? "") +
-            " for " + String(nextGemType["cost"] ?? "") + " gems", fontSize: 60.0, fontName: "Copperplate", color: #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1))
+        var buyGemText = Text(string: (gemInfo[nextGemType]?["name"])! +
+            " for " + (gemInfo[nextGemType]?["cost"])! + " gems", fontSize: 60.0, fontName: "Copperplate", color: #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1))
         buyGemText.center.y = 25
         buyGemText.center.x = 0
+        
+        if currentGemType == "diamond" {
+            buyGemText.center.y = 999
+            buyGemText2.center.y = 999
+        }
         
         let divider = Line(start: Point(x: 28, y: 19.3), end: Point(x: -28, y: 19.3))
         divider.color = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
@@ -71,10 +90,26 @@ func main() {
         buyAutoDrillText.center.y = 14
         buyAutoDrillText.center.x = 15
         
+        buyGemText.onTouchUp {
+            if gems > Int(gemInfo[currentGemType]!["cost"]!)! {
+                currentGemIndex += 1
+                currentGemType = gemOrder[currentGemIndex]
+                nextGemType = gemOrder[currentGemIndex + 1]
+                return
+            } else {
+                animate(duration: 0.7) {
+                    
+                }
+                return
+            }
+        }
+        
         backText.onTouchUp {
             defaults.set(drillInfo, forKey: localStorage.drillInfoKey)
             defaults.set(currentGemType, forKey: localStorage.currentGemTypeKey)
             defaults.set(nextGemType, forKey: localStorage.nextGemTypeKey)
+            defaults.set(currentGemIndex, forKey: localStorage.currentGemIndexKey)
+            defaults.set(gemsPerClick, forKey: localStorage.gemsPerClickKey)
             primary()
         }
     }
@@ -83,7 +118,7 @@ func main() {
         Canvas.shared.clear()
         
         Canvas.shared.color = Color.black
-        var gem = Image(name: String(currentGemType["image"] ?? currentGemTypeDefault["image"]!))
+        var gem = Image(name: (gemInfo[currentGemType]?["image"])!)
         gem.size.width = 60
         gem.size.height = 60
         gem.center.x = 0
@@ -102,7 +137,7 @@ func main() {
         }
         
         gem.onTouchDown {
-            gems += 1
+            gems += gemsPerClick
             gemsText.string = "Gems: " + String(gems)
             defaults.set(gems, forKey: localStorage.gemsKey)
 
