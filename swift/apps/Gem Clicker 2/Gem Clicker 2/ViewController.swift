@@ -57,7 +57,7 @@ func main() {
     func store() {
         Canvas.shared.clear()
         
-        let valuesNotTrueText = Text(string: "Not Enough Gems!", fontSize: 70.0, fontName: "Copperplate", color: #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1))
+        let valuesNotTrueText = Text(string: "Not Enough Gems!", fontSize: 70.0, fontName: "Copperplate", color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
         valuesNotTrueText.center.y = 0
         valuesNotTrueText.center.x -= 60
         
@@ -100,6 +100,23 @@ func main() {
                 animate(duration: 0.7) {
                     
                 }
+                return
+            }
+        }
+        
+        buyGemText2.onTouchUp {
+            if gems > Int(gemInfo[currentGemType]!["cost"]!)! {
+                currentGemIndex += 1
+                currentGemType = gemOrder[currentGemIndex]
+                nextGemType = gemOrder[currentGemIndex + 1]
+                return
+            } else {
+                valuesNotTrueText.color = #colorLiteral(red: 0.2788944964, green: 0.8626665609, blue: 0.5389116236, alpha: 1)
+                animate(duration: 0.7) {
+                    valuesNotTrueText.center.x -= 60
+                }
+                valuesNotTrueText.color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                valuesNotTrueText.center.x = 60
                 return
             }
         }
