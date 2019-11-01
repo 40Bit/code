@@ -1,37 +1,34 @@
-n = 0
 
-a = 0
-b = 0
-c = 0
-d = 0
-e = 0
-f = 0
-y = 5
-
-base = [a, b, c, d, e, f]
-numBase = [1, 2, 4, 8, 16, 32]
+numBase = []
 binaryNumber = []
+# binaryNumber is where the conversion is stored
 
-def binary(z):
-    global n, a, b, c, d, e, f, base, numBase
+s = 1
+
+for x in range(0, 10):
+    numBase.append(s)
+    s *= 2
+
+n = 42
+# number to be converted is n
+
+z = len(numBase) - 1
+
+def binary(a):
+    global numBase, n
     
-    if n >= numBase[z]:
-        x = n % numBase[z]
+    if n >= numBase[a]:
+        x = n % numBase[a]
         n -= x
-        base[z] = n / numBase[z]
+        binaryNumber.append(str(int(n / numBase[a])))
         n = x
-        base[z] = int(base[z])
-        base[z] = str(base[z])
-        binaryNumber.append(base[z])
 
     else:
-        base[z] = 0
-        base[z] = str(base[z])
-        binaryNumber.append(base[z])
+        binaryNumber.append('0')
 
-for x in range(0, len(base)):
-    binary(y)
-    y -= 1
+for x in range(0, len(numBase)):
+    binary(z)
+    z -= 1
 
 binaryNumber = ''.join(binaryNumber)
 print(binaryNumber)
