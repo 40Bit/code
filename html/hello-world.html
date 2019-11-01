@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">	
+		<title>Hello World!</title>
+	<!-- CSS -->
+		<style>
+		
+		.theButtons {
+			border-radius: 10px;
+			background-color: #30e3c2;
+			border: outset #23b096;
+		}
+	
+		.theButtonsText {
+			font-weight: bold;
+			color: #052657;
+			cursor: pointer;
+			text-decoration-line: none;
+		}
+		
+		#headingText {
+		 	color: black;
+ 			padding-left: 5px;
+		}
+			
+		#hiddenButton {
+			border: white;
+			color: white;
+			background-color: white;
+			cursor: default;
+			float: right;
+		}
+		
+		</style>
+	</head>	
+	<body>
+
+	<!-- the whole page -->
+	<div>
+	
+	<!-- heading text of page -->
+		<h3 id = headingText>
+			Click the Buttons!
+		</h3>
+		
+	<!-- a divider line -->
+		<hr>
+		
+	<!-- the 'button!' button -->
+		<button class = "theButtons">
+			<a href = "https://www.apple.com" target = "_blank" class = "theButtonsText">
+				button!
+			</a>
+		</button>
+			
+	<!-- the 'another button!' button -->
+		<button class = "theButtons">
+			<a href = "https://www.google.com" target = "_blank" class = "theButtonsText">
+				another button!
+			</a>
+		</button>
+		
+		<!-- the 'another another button!' button -->
+		<button class = "theButtons">
+			<a href = "https://www.terraria.org" target = "_blank" class = "theButtonsText">
+				another another button!
+			</a>
+		</button>
+	<!-- hidden secret -->
+		<button onclick="alert('how did you find me?')" id = "hiddenButton">_</button>
+	<body>	
+</html>
