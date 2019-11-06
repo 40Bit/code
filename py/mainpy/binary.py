@@ -6,7 +6,7 @@ binaryNumber = []
 s = 1
 
 for x in range(0, 10):
-# change number from 10 if n is quite high
+# change number from 10 if n is a high number
     numBase.append(s)
     s *= 2
 
