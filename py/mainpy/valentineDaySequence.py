@@ -18,7 +18,6 @@ a = 0
 z = 0
 q = 3
 
-
 while True:
     if n % 2 != 0:
         n *= 3
