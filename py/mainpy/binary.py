@@ -5,12 +5,12 @@ binaryNumber = []
 
 s = 1
 
-for x in range(0, 10):
+for x in range(0, 32):
 # change number from 10 if n is a high number
     numBase.append(s)
     s *= 2
 
-n = 42
+n = 4294967295
 # number to be converted is n
 
 z = len(numBase) - 1
