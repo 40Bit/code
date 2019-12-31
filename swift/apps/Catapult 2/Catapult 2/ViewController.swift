@@ -6,13 +6,22 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    func main() {
+    // the first screen
+    func startscreen() {
+        Canvas.shared.clear()
+        Canvas.shared.color = .black
+        let playgroundText = Text(string: "Playground", fontSize: 32.0, fontName: "Copperplate", color: #colorLiteral(red: 0, green: 0.7262907624, blue: 0.8682622313, alpha: 1))
+        
+        playgroundText.onTouchUp {
+            self.playground()
+        }
+    }
+    
+    // freeplay mode
+    func playground() {
+        Canvas.shared.clear()
         // changing background color
         Canvas.shared.color = .white
-        
-        // if device = phone, send message
-        // make sprites bigger / smaller? proj?
-        // move sprites? proj?
         
         // tries
         var tries = 0
@@ -22,6 +31,11 @@ class ViewController: UIViewController {
         var score = 0
         // the projectile
         var proj = Circle(radius: 0)
+        
+        // back text
+        let backText = Text(string: "Back", fontSize: 32.0, fontName: "Copperplate", color: #colorLiteral(red: 0.09019608050584793, green: 0.0, blue: 0.3019607961177826, alpha: 1.0))
+        backText.center.y = 30
+        backText.center.x = -37
         
         // tries text
         var triesText = Text(string: "Tries: " + String(tries), fontSize: 32.0, fontName: "Copperplate", color: #colorLiteral(red: 0.09019608050584793, green: 0.0, blue: 0.3019607961177826, alpha: 1.0))
@@ -63,6 +77,11 @@ class ViewController: UIViewController {
         basket.center.x -= 18
         basket.center.y -= 11
         basket.draggable = true
+        
+        // getting back to the first screen
+        backText.onTouchUp {
+            self.startscreen()
+        }
         
         // not letting the basket get too far away
         basket.onTouchDrag {
@@ -192,7 +211,7 @@ class ViewController: UIViewController {
         self.view = Canvas.shared.backingView
         self.preferredContentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         Canvas.shared.numPointsPerUnit = Double(UIScreen.main.bounds.height * 0.014)
-        main()
+        startscreen()
     }
 
 }
