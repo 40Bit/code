@@ -14,8 +14,8 @@ cards = ['rainbow ralphing cat', 'rainbow ralphing cat', 'rainbow ralphing cat',
        'nope', 'nope', 'nope', 'nope']
 
 deck = ['defuse']
-deck2 = ['defuse']
-clear = '\n' * 37
+deck2 = ['defuse', 'nope']
+clear = '\n' * 39
 numwords = ['single', 'double', 'triple']
 com = []
 game = 'on'
@@ -30,43 +30,23 @@ for x in range(1, 5):
     deck.append(random.choice(cards))
     cards.remove(deck[x])
 
-for x in range(1, 5):
+for x in range(1, 4):
     deck2.append(random.choice(cards))
     cards.remove(deck2[x])
 
 cards.append('exploding kitten')
 
-# turns in game
-def turn(deck, deck2):
-    global game
-    
-    attack = False
-    nope = False
-    used = 'none'
-    index = 100
-    a = 1
-
-    draw = True
-    print(clear)
-    print('your deck is: ', ' | '.join(deck))
-
-    while a == 1:
-        index = input('[enter number 1-%s or none] index of card: ' %len(deck))
-        
-        if index != 'none':
-            index = int(index)
-            used = deck[index - 1]
-
-        if used in ['rainbow ralphing cat', 'tacocat', 'beard cat', 'hairy potato cat', 'cattermelon']:
+def catcards(deck, deck2, used, nope):
+    if used in ['rainbow ralphing cat', 'tacocat', 'beard cat', 'hairy potato cat', 'cattermelon']:
             cats = ' '.join(deck).count(used)
             
             if cats > 1:
-                a = 0
+                query = '2'
                 
                 if cats > 2:
-                    index = input('[enter 2 or 3] play double or triple %ss? '%used)
+                    query = input('[enter 2 or 3] play double or triple %ss? '%used)
 
-                if index == '3':
+                if query == '3' and not nope:
                     for x in range(0, 3):
                         cards.append(used)
                         
@@ -85,7 +65,7 @@ def turn(deck, deck2):
                     else:
                         print('the other player does not have a %s' %taken)
 
-                else:
+                elif not nope:
                     for x in range(0, 2):
                         deck.remove(used)
                         cards.append(used)
@@ -95,28 +75,27 @@ def turn(deck, deck2):
                     deck.append(taken)
                     deck2.remove(taken)
 
-        if used in ['skip', 'attack']:
-            a = 0
+def skipattack(deck, deck2, used, nope):
+    if used in ['skip', 'attack'] and not nope:
             draw = False
             deck.remove(used)
             cards.append(used)
             
             if used == 'attack':
-                # attacks yourself on this turn
-                attack = True
+                attacx = True
                 print('you skipped your turn and the other player will draw two cards!')
                 
             else:
                 print('you skipped your turn!')
 
-        if used == 'see the future':
-            a = 0
+def seethefuture(deck, deck2, used, nope):
+    if used == 'see the future' and not nope:
             print('the next three cards are: %s' %' | '.join(com))
             deck.remove(used)
             cards.append(used)
 
-        if used == 'favor':
-            a = 0
+def favor(deck, deck2, used, nope):
+    if used == 'favor' and not nope:
             deck.remove(used)
             cards.append(used)
             
@@ -139,20 +118,100 @@ def turn(deck, deck2):
             print('pass the computer to the other player')
             time.sleep(5)
 
-        if used == 'shuffle':
-            a = 0
-            deck.remove(used)
-            cards.append(used)
-            com.clear()
-            print('you shuffled the deck')
+def shuffle(deck, deck2, used, nope):
+    if used == 'shuffle' and not nope:
+        deck.remove(used)
+        cards.append(used)
+        com.clear()
+        print('you shuffled the deck')
             
-            for x in range(0, 3):
-                z = random.choice(cards)
-                com.append(z)
-                cards.remove(z)
+        for x in range(0, 3):
+            z = random.choice(cards)
+            com.append(z)
+            cards.remove(z)
 
-        if used == 'none':
-            a = 0
+def noped(query, used):
+    global deck2
+    
+    print('pass the computer to the other player')
+    time.sleep(2)
+    
+    print(clear)
+    print('your deck is: ', ' | '.join(deck2))
+    nopeq = input('[enter y/n] do you want to nope %s %s? ' %(query, used))
+    
+    if nopeq == 'y':
+        if ' '.join(deck2).count('nope') > 0:
+            print('the %s got noped!' %used)
+            deck2.remove('nope')
+            cards.append('nope')
+            turn = 0
+            return True
+
+        else:
+            print('you don\'t have a nope!')
+            return False
+
+    if nopeq == 'n':
+        print('you did not nope the %s' %used)
+        return False
+
+# turns in game
+def gameturn(deck, deck2):
+    global game
+    global turn
+
+    query = 'a'
+    attack = False
+    attax = False
+    used = 'none'
+    index = 100
+    draw = True
+    nope = False
+    usable = False
+
+    print(clear)
+    print('your deck is: ', ' | '.join(deck))
+
+    while usable == False:
+        index = input('[enter number 1-%s or none] index of card: ' %len(deck))
+
+        if index != 'none':
+            index = int(index)
+
+            if len(deck) >= index:
+                used = deck[index - 1]
+                if used in ['skip', 'attack', 'see the future', 'favor', 'shuffle']:
+                    usable = True
+
+                if used in ['rainbow ralphing cat', 'tacocat', 'beard cat', 'hairy potato cat', 'cattermelon']:
+                    cats = ' '.join(deck).count(used)
+            
+                    if cats > 1:
+                        query = '2'
+                        usable = True
+                
+                    if cats > 2:
+                        query = input('[enter 2 or 3] play double or triple %ss? '%used)
+
+        if index == 'none':
+            usable = True
+
+        if used != 'none' and usable:
+            nope = noped(query, used)
+            
+            print('pass the computer to the other player')
+            time.sleep(2)
+            print(clear)
+
+        catcards(deck, deck2, used, nope)
+        skipattack(deck, deck2, used, nope)
+        seethefuture(deck, deck2, used, nope)
+        favor(deck, deck2, used, nope)
+        shuffle(deck, deck2, used, nope)
+
+        if nope:
+            print('your card got noped!')
             
     if draw and not attack:
         deck.append(com[0])
@@ -172,8 +231,11 @@ def turn(deck, deck2):
             cards.remove(z)
                 
         attack = False
-        # attacks yourself on this turn
 
+    if attax:
+        attack = True
+        attax = False
+        
     if 'exploding kitten' in deck:
         print('you picked up an exploding kitten!')
 
@@ -185,13 +247,17 @@ def turn(deck, deck2):
             game = 'over'
         
     print('\nyour deck is: ', ' | '.join(deck))
-    time.sleep(5)
+    time.sleep(2.5)
     print(clear)
 
     print('pass the computer to the other player')
     time.sleep(5)
 
 # game starts
-while game != 'over':
-    turn(deck, deck2)
-    turn(deck2, deck)
+while True:
+    if game == 'over':
+        break
+    gameturn(deck, deck2)
+    if game == 'over':
+        break
+    gameturn(deck2, deck)
