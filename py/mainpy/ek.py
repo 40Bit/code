@@ -145,7 +145,6 @@ def noped(query, used):
             print('the %s got noped!' %used)
             deck2.remove('nope')
             cards.append('nope')
-            turn = 0
             return True
 
         else:
@@ -159,7 +158,6 @@ def noped(query, used):
 # turns in game
 def gameturn(deck, deck2):
     global game
-    global turn
 
     query = 'a'
     attack = False
@@ -204,10 +202,19 @@ def gameturn(deck, deck2):
             time.sleep(2)
             print(clear)
 
+        # playing cat cards
         catcards(deck, deck2, used, nope)
+
+        # playing skip and attack
         skipattack(deck, deck2, used, nope)
+
+        # playing see the future
         seethefuture(deck, deck2, used, nope)
+
+        # playing favor
         favor(deck, deck2, used, nope)
+
+        # playing shuffle
         shuffle(deck, deck2, used, nope)
 
         if nope:
